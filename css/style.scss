@@ -1,0 +1,462 @@
+@import 'variables';
+@import 'mixins';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    font-family: $bodyFont;
+    font-weight: $baseWeight;
+}
+html {
+    font-size: $baseSize;
+}
+body {
+    width: 100%;
+    height: max-content;
+    overflow-x: hidden;
+}
+ul {
+    list-style: none;
+}
+li {
+    cursor: pointer;
+}
+button {
+    border: solid 2px white;
+    background-color: transparent;
+    color: white;
+    text-transform: uppercase;
+    @include flexbox($gap: auto);
+    cursor: pointer;
+    font-weight: 700;
+    letter-spacing: 0.05rem;
+    transition: $transition;
+}
+button:hover {
+    background-color: white;
+    color: $darkViolet;
+}
+h1,
+h2,
+h3,
+h4 {
+    font-family: $headingFont;
+}
+h1 {
+    font-size: 2.9rem;
+    font-weight: 700;
+    line-height: 2.8rem;
+}
+h2 {
+    font-size: 2.8rem;
+}
+h3 {
+    font-size: 1.8rem;
+}
+h4 {
+    font-size: 2.6rem;
+}
+
+header {
+    width: 100%;
+    
+    nav {
+        width: 100%;
+        height: 5rem;
+        padding: 1.5rem;
+        position: relative;
+        @include flexbox($justify: space-between, $gap: auto);
+
+        .logo {
+            width: 7.8rem;
+            height: 1.2rem;
+        }
+        .menu {
+            height: 1.8rem;
+            width: 1.8rem;
+            cursor: pointer;
+            z-index: 5;
+        }
+        .close {
+            background: url(../images/icon-hamburger.svg) no-repeat;
+            background-size: 100% 100%;
+        }
+        .open {
+            background: url(../images/icon-close.svg) no-repeat;
+            background-size: 100% 100%;
+        }
+        ul.toggle-list {
+            @include flexbox($direction: column, $justify: flex-start, $gap: 2.5rem);
+            display: none;
+            position: absolute;
+            background-image: url(../images/bg-pattern-mobile-nav.svg);
+            background-repeat: no-repeat;
+            background-size: 100% 40%;
+            background-position: 0% 100%;
+            background-color: $veryDarkViolet;
+            color: white;
+            width: 100%;
+            height: 40rem;
+            left: 0;
+            top: 5rem;
+            padding-top: 3.5rem;
+            text-transform: uppercase;
+            z-index: 3;
+            li {
+                font-weight: 700;
+                letter-spacing: 0.1rem;
+            }
+            button {
+                width: 85%;
+                height: 3.3rem;
+                letter-spacing: 0.1rem;
+                font-size: 1rem;
+            }
+        }
+    }
+
+    section.hero {
+        width: 100%;
+        position: relative;
+
+        .intro-pic {
+            width: 100%;
+            height: 0;
+            padding-top: calc(100% + 6rem);
+            background: url(../images/image-intro-mobile.jpg) no-repeat;
+            background-size: 100% 100%;
+        }
+        .intro-des {
+            background: url(../images/bg-pattern-intro-left-mobile.svg) no-repeat;
+            background-size: 45% 37%;
+            background-color: $darkViolet;
+            color: $veryLightGray;
+            @include flexbox($direction: column, $gap: 1.5rem);
+            text-align: center;
+            padding: 6rem 2.5rem;
+            hr {
+                display: none;
+                z-index: 2;
+            }
+            h1 {
+                z-index: 2;
+            }
+            p {
+                opacity: 0.8;
+                line-height: 1.7rem;
+                z-index: 2;
+            }
+            button {
+                width: 9rem;
+                height: 2.5rem;
+                z-index: 2;
+            }
+        }
+        .bg-right {
+            display: none;
+        }
+        .bg-right {
+            position: absolute;
+            background: url(../images/bg-pattern-intro-right-mobile.svg) no-repeat;
+            background-size: 100% 100%;
+            width: 33%;
+            height: 25rem;
+            bottom: -13rem;
+            right: 0rem;
+        }
+    }
+}
+
+main {
+    width: 100%;
+    @include flexbox($direction: column, $gap: 6.5rem);
+
+    section {
+        @include flexbox($direction: column, $gap: 3rem);
+        text-align: center;
+    }
+    section.features {
+        margin-top: 7rem;
+        padding: 0 5%;
+        @include flexbox($direction: column, $gap: 2.5rem);
+
+        hr {
+            width: 30%;
+            border: none;
+            height: 1px;
+            background-color: rgba($darkGrayishViolet, 0.5);
+        }
+        h2 {
+            margin: -1rem auto 1.5rem;
+        }
+        article {
+            div {
+                @include flexbox($direction: column, $gap: 1.3rem);
+                margin-bottom: 2.5rem;
+                img {
+                    width: 5rem;
+                }
+                p {
+                    width: 81%;
+                    line-height: 2rem;
+                    color: $darkGrayishViolet;
+                } 
+            }
+        }
+        
+    }
+    section.banner {
+        width: 90%;
+        background-color: $darkViolet;
+        color: $veryLightGray;
+        padding: 4rem 2rem;
+        gap: 2rem;
+        background-image: url(../images/bg-pattern-how-we-work-mobile.svg);
+        background-repeat: no-repeat;
+        background-position: 100% 0%;
+        background-size: 45% 95%;
+
+        button {
+            width: 58%;
+            height: 2.8rem;
+        }
+    }
+}
+
+footer {
+    width: 100%;
+    margin-top: 7rem;
+    background-color: $veryLightGray;
+    @include flexbox($direction: column, $gap: 0);
+    section {
+        @include flexbox($direction: column, $gap: 2rem);
+    }
+    section.contact {
+        position: relative;
+        width: 100%;
+        padding: 5rem 6rem 2.3rem;
+        background: url(../images/bg-pattern-footer-mobile.svg) no-repeat;
+        background-size: 100% 90%;
+        .icons {
+            @include flexbox($justify: space-between, $gap: 1rem);
+            svg {
+                width: 1.8rem;
+                height: 1.8rem;
+                fill: $darkGrayishViolet;
+                cursor: pointer;
+                transition: $transition;
+            }
+            svg:hover {
+                fill: $veryDarkViolet;
+            }
+        }
+        hr {
+            position: absolute;
+            height: 1px;
+            border: none;
+            background-color: rgba($darkGrayishViolet, 0.3);
+            width: 90%;
+            bottom: 0;
+        }
+    }
+    section.info {
+        padding: 3rem 3rem 5rem;
+        gap: 3rem;
+        div {
+            text-align: center;
+            letter-spacing: 0.05rem;
+            text-transform: uppercase;
+            @include flexbox($direction: column, $gap: 2rem);
+            p {
+                color: $darkGrayishViolet;
+                font-weight: 700;
+            }
+            ul {
+                @include flexbox($direction: column, $gap: 1rem);
+                li {
+                    font-weight: 700;
+                    color: $veryDarkViolet;
+                }
+                li:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+    header {
+        nav {
+            padding: 0;
+            width: 80%;
+            height: 6rem;
+            margin: auto;
+            .menu {
+                display: none;
+            }
+            ul.toggle-list {
+                @include flexbox($justify: space-between, $gap: auto);
+                position: static;
+                background-image: none;
+                background-color: transparent;
+                color: $darkGrayishViolet;
+                width: 40rem;
+                height: max-content;
+                padding-top: 0;
+                li:hover {
+                    transition: $transition;
+                    color: $veryDarkViolet;
+                }
+                button {
+                    width: 10rem;
+                    height: 3rem;
+                    border: solid 2px $veryDarkViolet;
+                    color: $veryDarkViolet;
+                }
+                button:hover {
+                    background-color: $veryDarkViolet;
+                    color: white;
+                }
+            }
+        }
+        section.hero {
+            .intro-pic {
+                position: absolute;
+                width: 35%;
+                height: calc(100% + 3rem);
+                padding-top: 0;
+                top: 5rem;
+                right: 10%;
+                background: url(../images/image-intro-desktop.jpg) no-repeat;
+                background-size: cover;
+            }
+            .intro-des {
+                width: 100%;
+                background-image: none;
+                @include flexbox($direction: column, $align: flex-start, $gap: 1.5rem);
+                text-align: left;
+                padding: 5rem 50% 8rem 10%;
+                hr {
+                    display: block;
+                    height: 1px;
+                    border: none;
+                    background-color: white;
+                    opacity: 0.8;
+                    width: 8rem;
+                    margin-bottom: 3rem;
+                }
+                h1 {
+                    font-size: 5rem;
+                    line-height: 4rem;
+                    margin-bottom: 1rem;
+                }
+                button {
+                    width: 10rem;
+                    height: 2.6rem;
+                }
+            }
+            .bg-left {
+                display: block;
+                position: absolute;
+                background: url(../images/bg-pattern-intro-left-desktop.svg) no-repeat;
+                background-size: 100% 100%;
+                bottom: -18rem;
+                left: 0;
+                width: 12%;
+                height: 80%;
+            }
+            .bg-right {
+                display: block;
+                background: url(../images/bg-pattern-intro-right-desktop.svg) no-repeat;
+                background-size: 100% 100%;
+                width: 25%;
+                height: 85%;
+                top: 0;
+                bottom: none;
+                z-index: 2;
+            }
+        }
+    }
+    main {
+        padding: 3rem 10%;
+        gap: 8rem;
+        section {
+            width: 100%;
+            text-align: left;
+        }
+        section.features {
+            margin-top: 12rem;
+            padding: 0;
+            align-items: flex-start;
+            hr {
+                width: 8rem;
+            }
+            h2 {
+                margin-left: 0;
+            }
+            article {
+                @include flexbox($justify: space-between, $gap: 2.5%);
+                div {
+                    align-items: flex-start;
+                    margin-bottom: 0;
+                    p {
+                        width: 100%;
+                    } 
+                }
+            }
+            
+        }
+        section.banner {
+            width: 100%;
+            height: 13rem;
+            flex-direction: row;
+            justify-content: space-between;
+            padding: 2rem 5rem;
+            background-image: url(../images/bg-pattern-how-we-work-desktop.svg);
+            background-position: 100% 0%;
+            background-size: 45% 100%;
+            h4 {
+                width: 35%;
+            }
+            button {
+                width: 12rem;
+            }
+        }
+    }
+    footer {
+        background-image: url(../images/bg-pattern-footer-desktop.svg);
+        background-repeat: no-repeat;
+        background-size: 35% 60%;
+        section {
+            @include flexbox($direction: row, $justify: space-between, $gap: 2rem);
+        }
+        section.contact {
+            padding: 5rem 10% 2.3rem;
+            background: none;
+            hr {
+                width: 80%;
+            }
+        }
+        section.info {
+            width: 100%;
+            padding: 3rem 10%;
+            justify-content: flex-start;
+            gap: 16%;
+            div {
+                height: 12rem;
+                text-align: left;
+                @include flexbox($direction: column, $justify: flex-start, $align: flex-start, $gap: 2rem);
+                ul {
+                    align-items: flex-start;
+                }
+            }
+        }
+    }
+}

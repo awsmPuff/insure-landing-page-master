@@ -1,0 +1,531 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  font-family: "Karla", sans-serif;
+  font-weight: 400;
+}
+
+html {
+  font-size: 14px;
+}
+
+body {
+  width: 100%;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  overflow-x: hidden;
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  cursor: pointer;
+}
+
+button {
+  border: solid 2px white;
+  background-color: transparent;
+  color: white;
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: auto;
+  cursor: pointer;
+  font-weight: 700;
+  letter-spacing: 0.05rem;
+  transition: 0.25s ease;
+}
+
+button:hover {
+  background-color: white;
+  color: hsl(256deg, 26%, 20%);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "DM Serif Display", serif;
+}
+
+h1 {
+  font-size: 2.9rem;
+  font-weight: 700;
+  line-height: 2.8rem;
+}
+
+h2 {
+  font-size: 2.8rem;
+}
+
+h3 {
+  font-size: 1.8rem;
+}
+
+h4 {
+  font-size: 2.6rem;
+}
+
+header {
+  width: 100%;
+}
+header nav {
+  width: 100%;
+  height: 5rem;
+  padding: 1.5rem;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: auto;
+}
+header nav .logo {
+  width: 7.8rem;
+  height: 1.2rem;
+}
+header nav .menu {
+  height: 1.8rem;
+  width: 1.8rem;
+  cursor: pointer;
+  z-index: 5;
+}
+header nav .close {
+  background: url(../images/icon-hamburger.svg) no-repeat;
+  background-size: 100% 100%;
+}
+header nav .open {
+  background: url(../images/icon-close.svg) no-repeat;
+  background-size: 100% 100%;
+}
+header nav ul.toggle-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 2.5rem;
+  display: none;
+  position: absolute;
+  background-image: url(../images/bg-pattern-mobile-nav.svg);
+  background-repeat: no-repeat;
+  background-size: 100% 40%;
+  background-position: 0% 100%;
+  background-color: hsl(270deg, 9%, 17%);
+  color: white;
+  width: 100%;
+  height: 40rem;
+  left: 0;
+  top: 5rem;
+  padding-top: 3.5rem;
+  text-transform: uppercase;
+  z-index: 3;
+}
+header nav ul.toggle-list li {
+  font-weight: 700;
+  letter-spacing: 0.1rem;
+}
+header nav ul.toggle-list button {
+  width: 85%;
+  height: 3.3rem;
+  letter-spacing: 0.1rem;
+  font-size: 1rem;
+}
+header section.hero {
+  width: 100%;
+  position: relative;
+}
+header section.hero .intro-pic {
+  width: 100%;
+  height: 0;
+  padding-top: calc(100% + 6rem);
+  background: url(../images/image-intro-mobile.jpg) no-repeat;
+  background-size: 100% 100%;
+}
+header section.hero .intro-des {
+  background: url(../images/bg-pattern-intro-left-mobile.svg) no-repeat;
+  background-size: 45% 37%;
+  background-color: hsl(256deg, 26%, 20%);
+  color: hsl(0deg, 0%, 98%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  text-align: center;
+  padding: 6rem 2.5rem;
+}
+header section.hero .intro-des hr {
+  display: none;
+  z-index: 2;
+}
+header section.hero .intro-des h1 {
+  z-index: 2;
+}
+header section.hero .intro-des p {
+  opacity: 0.8;
+  line-height: 1.7rem;
+  z-index: 2;
+}
+header section.hero .intro-des button {
+  width: 9rem;
+  height: 2.5rem;
+  z-index: 2;
+}
+header section.hero .bg-right {
+  display: none;
+}
+header section.hero .bg-right {
+  position: absolute;
+  background: url(../images/bg-pattern-intro-right-mobile.svg) no-repeat;
+  background-size: 100% 100%;
+  width: 33%;
+  height: 25rem;
+  bottom: -13rem;
+  right: 0rem;
+}
+
+main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 6.5rem;
+}
+main section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  text-align: center;
+}
+main section.features {
+  margin-top: 7rem;
+  padding: 0 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2.5rem;
+}
+main section.features hr {
+  width: 30%;
+  border: none;
+  height: 1px;
+  background-color: rgba(131, 125, 135, 0.5);
+}
+main section.features h2 {
+  margin: -1rem auto 1.5rem;
+}
+main section.features article div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.3rem;
+  margin-bottom: 2.5rem;
+}
+main section.features article div img {
+  width: 5rem;
+}
+main section.features article div p {
+  width: 81%;
+  line-height: 2rem;
+  color: hsl(273deg, 4%, 51%);
+}
+main section.banner {
+  width: 90%;
+  background-color: hsl(256deg, 26%, 20%);
+  color: hsl(0deg, 0%, 98%);
+  padding: 4rem 2rem;
+  gap: 2rem;
+  background-image: url(../images/bg-pattern-how-we-work-mobile.svg);
+  background-repeat: no-repeat;
+  background-position: 100% 0%;
+  background-size: 45% 95%;
+}
+main section.banner button {
+  width: 58%;
+  height: 2.8rem;
+}
+
+footer {
+  width: 100%;
+  margin-top: 7rem;
+  background-color: hsl(0deg, 0%, 98%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+}
+footer section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+footer section.contact {
+  position: relative;
+  width: 100%;
+  padding: 5rem 6rem 2.3rem;
+  background: url(../images/bg-pattern-footer-mobile.svg) no-repeat;
+  background-size: 100% 90%;
+}
+footer section.contact .icons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+footer section.contact .icons svg {
+  width: 1.8rem;
+  height: 1.8rem;
+  fill: hsl(273deg, 4%, 51%);
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+footer section.contact .icons svg:hover {
+  fill: hsl(270deg, 9%, 17%);
+}
+footer section.contact hr {
+  position: absolute;
+  height: 1px;
+  border: none;
+  background-color: rgba(131, 125, 135, 0.3);
+  width: 90%;
+  bottom: 0;
+}
+footer section.info {
+  padding: 3rem 3rem 5rem;
+  gap: 3rem;
+}
+footer section.info div {
+  text-align: center;
+  letter-spacing: 0.05rem;
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+footer section.info div p {
+  color: hsl(273deg, 4%, 51%);
+  font-weight: 700;
+}
+footer section.info div ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+footer section.info div ul li {
+  font-weight: 700;
+  color: hsl(270deg, 9%, 17%);
+}
+footer section.info div ul li:hover {
+  text-decoration: underline;
+}
+
+@media screen and (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+  header nav {
+    padding: 0;
+    width: 80%;
+    height: 6rem;
+    margin: auto;
+  }
+  header nav .menu {
+    display: none;
+  }
+  header nav ul.toggle-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: auto;
+    position: static;
+    background-image: none;
+    background-color: transparent;
+    color: hsl(273deg, 4%, 51%);
+    width: 40rem;
+    height: -webkit-max-content;
+    height: -moz-max-content;
+    height: max-content;
+    padding-top: 0;
+  }
+  header nav ul.toggle-list li:hover {
+    transition: 0.25s ease;
+    color: hsl(270deg, 9%, 17%);
+  }
+  header nav ul.toggle-list button {
+    width: 10rem;
+    height: 3rem;
+    border: solid 2px hsl(270deg, 9%, 17%);
+    color: hsl(270deg, 9%, 17%);
+  }
+  header nav ul.toggle-list button:hover {
+    background-color: hsl(270deg, 9%, 17%);
+    color: white;
+  }
+  header section.hero .intro-pic {
+    position: absolute;
+    width: 35%;
+    height: calc(100% + 3rem);
+    padding-top: 0;
+    top: 5rem;
+    right: 10%;
+    background: url(../images/image-intro-desktop.jpg) no-repeat;
+    background-size: cover;
+  }
+  header section.hero .intro-des {
+    width: 100%;
+    background-image: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 1.5rem;
+    text-align: left;
+    padding: 5rem 50% 8rem 10%;
+  }
+  header section.hero .intro-des hr {
+    display: block;
+    height: 1px;
+    border: none;
+    background-color: white;
+    opacity: 0.8;
+    width: 8rem;
+    margin-bottom: 3rem;
+  }
+  header section.hero .intro-des h1 {
+    font-size: 5rem;
+    line-height: 4rem;
+    margin-bottom: 1rem;
+  }
+  header section.hero .intro-des button {
+    width: 10rem;
+    height: 2.6rem;
+  }
+  header section.hero .bg-left {
+    display: block;
+    position: absolute;
+    background: url(../images/bg-pattern-intro-left-desktop.svg) no-repeat;
+    background-size: 100% 100%;
+    bottom: -18rem;
+    left: 0;
+    width: 12%;
+    height: 80%;
+  }
+  header section.hero .bg-right {
+    display: block;
+    background: url(../images/bg-pattern-intro-right-desktop.svg) no-repeat;
+    background-size: 100% 100%;
+    width: 25%;
+    height: 85%;
+    top: 0;
+    bottom: none;
+    z-index: 2;
+  }
+  main {
+    padding: 3rem 10%;
+    gap: 8rem;
+  }
+  main section {
+    width: 100%;
+    text-align: left;
+  }
+  main section.features {
+    margin-top: 12rem;
+    padding: 0;
+    align-items: flex-start;
+  }
+  main section.features hr {
+    width: 8rem;
+  }
+  main section.features h2 {
+    margin-left: 0;
+  }
+  main section.features article {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2.5%;
+  }
+  main section.features article div {
+    align-items: flex-start;
+    margin-bottom: 0;
+  }
+  main section.features article div p {
+    width: 100%;
+  }
+  main section.banner {
+    width: 100%;
+    height: 13rem;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 2rem 5rem;
+    background-image: url(../images/bg-pattern-how-we-work-desktop.svg);
+    background-position: 100% 0%;
+    background-size: 45% 100%;
+  }
+  main section.banner h4 {
+    width: 35%;
+  }
+  main section.banner button {
+    width: 12rem;
+  }
+  footer {
+    background-image: url(../images/bg-pattern-footer-desktop.svg);
+    background-repeat: no-repeat;
+    background-size: 35% 60%;
+  }
+  footer section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+  }
+  footer section.contact {
+    padding: 5rem 10% 2.3rem;
+    background: none;
+  }
+  footer section.contact hr {
+    width: 80%;
+  }
+  footer section.info {
+    width: 100%;
+    padding: 3rem 10%;
+    justify-content: flex-start;
+    gap: 16%;
+  }
+  footer section.info div {
+    height: 12rem;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 2rem;
+  }
+  footer section.info div ul {
+    align-items: flex-start;
+  }
+}/*# sourceMappingURL=style.css.map */
