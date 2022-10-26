@@ -28,8 +28,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [https://www.frontendmentor.io/solutions/insure-landing-page-using-flexbox-imNyYl-3yL](https://your-solution-url.com)
+- Live Site URL: [https://awsmpuff.github.io/insure-landing-page-master/](https://your-live-site-url.com)
 
 ## My process
 
